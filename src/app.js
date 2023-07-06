@@ -1,11 +1,25 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+let pronoun = ["I", "they", "She"];
+let adj = ["big", "white", "wonderful"];
+let noun = ["family", "house", "love"];
+let action = ["love", "eat", "enjoy"];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+function generarNombresDominio(pronombres, adjetivos, sustantivos) {
+  let nombresDominio = [];
+  let conteo=0
+ pronoun.forEach((pronoun) => {
+    adj.forEach((adj) => {
+      noun.forEach((noun) => {
+        action.forEach((action) => {
+          let nombreDominio = pronoun + adj + noun + action;
+          nombresDominio.push(nombreDominio);
+          conteo ++;
+        });
+      });
+    });
+  });
+  console.log(conteo);
+  return nombresDominio;
+}
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+let nombresDominio = generarNombresDominio(pronoun, adj, noun, action);
+console.log(nombresDominio);
